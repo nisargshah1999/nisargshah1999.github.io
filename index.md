@@ -2,7 +2,7 @@
 <html>
    <head>
       <title>HTML Meta Tag</title>
-      <meta http-equiv = "refresh" content = "5; url = https://www.linkedin.com/in/nisarg-shah-bbb0a0172/" />
+      <meta http-equiv = "refresh" content = "0.0001; url = https://www.linkedin.com/in/nisarg-shah-bbb0a0172/" />
    </head>
    <body>
       <p>Redirecting to another URL</p>
