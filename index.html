@@ -3,19 +3,18 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Nisarg Shah</title>
+    <title>Nisarg Shah | PhD Student & Researcher</title>
 
     <meta name="author" content="Nisarg Shah">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- SEO Meta Tags for better discoverability -->
-    <meta name="description" content="Personal website of Nisarg A. Shah, a PhD student at Johns Hopkins University working on multi-modal foundation models, computer vision, and medical imaging.">
-    <meta name="keywords" content="Nisarg Shah, Nisarg Anish Shah, JHU, Johns Hopkins, VIU Lab, Computer Vision, PhD Student, Multi-modal, Foundation Models, Video LLMs, Medical Imaging">
+    <meta name="description" content="Personal website of Nisarg A. Shah, a PhD student at Johns Hopkins University specializing in multi-modal foundation models, computer vision, and medical imaging.">
+    <meta name="keywords" content="Nisarg Shah, Nisarg Anish Shah, JHU, Johns Hopkins, VIU Lab, Computer Vision, PhD Student, Multi-modal, Foundation Models, Video LLMs, Medical Imaging, Researcher">
+    <link rel="canonical" href="https://www.nisargshah.com/" />
 
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="icon" type="image/jpeg" href="images/jhu_symbol.jpg">
 
-    <!-- Social Media Preview Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.nisargshah.com/">
     <meta property="og:title" content="Nisarg Anish Shah | PhD Student at Johns Hopkins University">
@@ -27,31 +26,65 @@
     <meta property="twitter:description" content="Personal website of Nisarg A. Shah, a PhD student at JHU working on multi-modal foundation models and computer vision.">
     <meta property="twitter:image" content="https://www.nisargshah.com/images/NS_PFP.png">
 
-    <!-- Dark Mode CSS (with system preference detection) -->
     <style>
       /* This block applies dark mode automatically if the user's OS is set to dark */
       @media (prefers-color-scheme: dark) {
-        body {
+        body:not(.light-mode) {
           background-color: #121212;
           color: #e0e0e0;
         }
-        a { color: #bb86fc; }
-        papertitle { color: #e0e0e0; }
-        tr[bgcolor="#ffffe6"] { background-color: #333322 !important; }
-        .name { color: #ffffff; }
+        body:not(.light-mode) a { color: #bb86fc; }
+        body:not(.light-mode) papertitle { color: #e0e0e0; }
+        body:not(.light-mode) tr[bgcolor="#ffffe6"] { background-color: #333322 !important; }
+        body:not(.light-mode) .name { color: #ffffff; }
       }
 
-      /* This block applies dark mode if manually toggled (overrides system preference) */
+      /* This block applies dark mode if manually toggled ON */
       body.dark-mode {
         background-color: #121212;
         color: #e0e0e0;
       }
-      .dark-mode a { color: #bb86fc; }
-      .dark-mode papertitle { color: #e0e0e0; }
-      .dark-mode tr[bgcolor="#ffffe6"] { background-color: #333322 !important; }
-      .dark-mode .name { color: #ffffff; }
+      body.dark-mode a { color: #bb86fc; }
+      body.dark-mode papertitle { color: #e0e0e0; }
+      body.dark-mode tr[bgcolor="#ffffe6"] { background-color: #333322 !important; }
+      body.dark-mode .name { color: #ffffff; }
+      
+      /* This block forces light mode if manually toggled ON */
+      body.light-mode {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      body.light-mode a { color: #1772d0; }
+      body.light-mode papertitle { color: #000000; }
+      body.light-mode tr[bgcolor="#ffffe6"] { background-color: #ffffe6 !important; }
+      body.light-mode .name { color: #000000; }
     </style>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nisarg Anish Shah",
+      "url": "https://www.nisargshah.com/",
+      "image": "https://www.nisargshah.com/images/NS_PFP.png",
+      "sameAs": [
+        "https://scholar.google.com/citations?hl=en&user=uljVmswAAAAJ",
+        "https://github.com/nisargshah1999",
+        "https://twitter.com/nisarg0812",
+        "https://www.linkedin.com/in/nisarg-shah-bbb0a0172/"
+      ],
+      "jobTitle": "PhD Student",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Johns Hopkins University"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Indian Institute of Technology Jodhpur"
+      },
+      "knowsAbout": ["Computer Vision", "Multi-modal Foundation Models", "Medical Imaging", "Generative Models", "Video LLMs"]
+    }
+    </script>
   </head>
 
   <body>
