@@ -1,0 +1,1 @@
+Source code for Nisarg Shah's public [academic website](https://nisargshah1999.github.io) shoplifted from [Jon Barron's website](https://github.com/jonbarron/jonbarron_website) .
