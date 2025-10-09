@@ -17,34 +17,39 @@
 
     <!-- Social Media Preview Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nisargshah1999.github.io/">
+    <meta property="og:url" content="https://www.nisargshah.com/">
     <meta property="og:title" content="Nisarg Anish Shah | PhD Student at Johns Hopkins University">
     <meta property="og:description" content="Personal website of Nisarg A. Shah, a PhD student at JHU working on multi-modal foundation models and computer vision.">
-    <meta property="og:image" content="https://nisargshah1999.github.io/images/NS_PFP.png">
+    <meta property="og:image" content="https://www.nisargshah.com/images/NS_PFP.png">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nisargshah1999.github.io/">
+    <meta property="twitter:url" content="https://www.nisargshah.com/">
     <meta property="twitter:title" content="Nisarg Anish Shah | PhD Student at Johns Hopkins University">
     <meta property="twitter:description" content="Personal website of Nisarg A. Shah, a PhD student at JHU working on multi-modal foundation models and computer vision.">
-    <meta property="twitter:image" content="https://nisargshah1999.github.io/images/NS_PFP.png">
+    <meta property="twitter:image" content="https://www.nisargshah.com/images/NS_PFP.png">
 
-    <!-- Dark Mode CSS -->
+    <!-- Dark Mode CSS (with system preference detection) -->
     <style>
+      /* This block applies dark mode automatically if the user's OS is set to dark */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #121212;
+          color: #e0e0e0;
+        }
+        a { color: #bb86fc; }
+        papertitle { color: #e0e0e0; }
+        tr[bgcolor="#ffffe6"] { background-color: #333322 !important; }
+        .name { color: #ffffff; }
+      }
+
+      /* This block applies dark mode if manually toggled (overrides system preference) */
       body.dark-mode {
         background-color: #121212;
         color: #e0e0e0;
       }
-      .dark-mode a {
-        color: #bb86fc;
-      }
-      .dark-mode papertitle {
-        color: #e0e0e0;
-      }
-      .dark-mode tr[bgcolor="#ffffe6"] {
-        background-color: #333322 !important;
-      }
-      .dark-mode .name {
-        color: #ffffff;
-      }
+      .dark-mode a { color: #bb86fc; }
+      .dark-mode papertitle { color: #e0e0e0; }
+      .dark-mode tr[bgcolor="#ffffe6"] { background-color: #333322 !important; }
+      .dark-mode .name { color: #ffffff; }
     </style>
 
   </head>
@@ -302,25 +307,36 @@
       </tr>
     </table>
     
-    <!-- Dark Mode JavaScript -->
+    <!-- Dark Mode JavaScript (with system preference logic) -->
     <script>
       function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-        // Save preference to localStorage
-        if (document.body.classList.contains('dark-mode')) {
-          localStorage.setItem('theme', 'dark');
-        } else {
+        // Check current state, including system preference
+        const isCurrentlyDark = document.body.classList.contains('dark-mode') || 
+                                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+        if (isCurrentlyDark) {
+          // Switch to light mode
+          document.body.classList.remove('dark-mode');
+          document.body.classList.add('light-mode');
           localStorage.setItem('theme', 'light');
+        } else {
+          // Switch to dark mode
+          document.body.classList.remove('light-mode');
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
         }
       }
 
-      // Check for saved preference on page load
+      // Apply saved theme on page load, otherwise respect system settings via CSS
       (function () {
-        if (localStorage.getItem('theme') === 'dark') {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
           document.body.classList.add('dark-mode');
+        } else if (savedTheme === 'light') {
+          document.body.classList.add('light-mode');
         }
       })();
     </script>
-
+    
   </body>
 </html>
